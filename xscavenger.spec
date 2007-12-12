@@ -14,7 +14,7 @@ Source12: %{name}.48.png.bz2
 URL: http://www.xdr.com/dash/scavenger.html
 License: GPL
 Group: Games/Arcade
-BuildRequires: XFree86-devel
+BuildRequires: X11-devel
 BuildRequires: xorg-x11
 BuildRoot: %{_tmppath}/%{name}-buildroot
 
