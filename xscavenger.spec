@@ -16,7 +16,6 @@ License: GPL
 Group: Games/Arcade
 BuildRequires: X11-devel
 BuildRequires: xorg-x11
-BuildRoot: %{_tmppath}/%{name}-buildroot
 
 %description
 Scavenger is a cool arcade/thinking game very much like Lode Runner.
