@@ -42,11 +42,15 @@ cp -a data/* $RPM_BUILD_ROOT%{_gamesdatadir}/%{name}
 mkdir -p $RPM_BUILD_ROOT%{_mandir}/man6
 cp src/scavenger.6 $RPM_BUILD_ROOT%{_mandir}/man6
 
-mkdir -p $RPM_BUILD_ROOT/%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT/%{_menudir}/%{name}
-?package(%{name}):command="%{_gamesbindir}/scavenger" icon="%{name}.png" \
-  needs="x11" section="Amusement/Arcade" title="X-Scavenger" \
-  longtitle="%{summary}"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{_gamesbindir}/scavenger
+Icon=%{name}
+Categories=Game;ArcadeGame;
+Name=X-Scavenger
+Comment=%{summary}
 EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_miconsdir}
@@ -69,7 +73,7 @@ rm -rf "$RPM_BUILD_ROOT"
 %doc README DOC copyright
 %attr(0755,root,root) %{_gamesbindir}/*
 %{_gamesdatadir}/%{name}
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
