@@ -1,6 +1,6 @@
 %define name xscavenger
 %define version 1.4.4
-%define release %mkrel 8
+%define release %mkrel 9
 %define summary Cool arcade/thinking game very much like Lode Runner
 
 Name: %{name}
