@@ -1,6 +1,6 @@
 %define name xscavenger
 %define version 1.4.4
-%define release %mkrel 9
+%define release %mkrel 10
 %define summary Cool arcade/thinking game very much like Lode Runner
 
 Name: %{name}
@@ -11,11 +11,12 @@ Source: http://www.xdr.com/dash/%{name}-%{version}.tar.bz2
 Source10: %{name}.16.png.bz2
 Source11: %{name}.32.png.bz2
 Source12: %{name}.48.png.bz2
+Patch0: xscavenger-1.4.4-link.patch
 URL: http://www.xdr.com/dash/scavenger.html
 License: GPL
 Group: Games/Arcade
-BuildRequires: X11-devel imake
-BuildRequires: xorg-x11
+BuildRequires: libx11-devel
+BuildRequires: imake
 BuildRoot: %{_tmppath}/%{name}-buildroot
 
 %description
@@ -27,13 +28,14 @@ to solve.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 cd src
 perl -pi -e 's,^LIBNAME.*,LIBNAME = %{_gamesdatadir}/%{name},' Imakefile
 xmkmf
 touch scavenger.man
-make
+make CDEBUGFLAGS="%optflags" EXTRA_LDOPTIONS="%ldflags"
 
 %install
 rm -rf "$RPM_BUILD_ROOT"
