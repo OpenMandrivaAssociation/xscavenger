@@ -15,7 +15,7 @@ Patch0: xscavenger-1.4.4-link.patch
 URL: http://www.xdr.com/dash/scavenger.html
 License: GPL
 Group: Games/Arcade
-BuildRequires: libx11-devel
+BuildRequires: pkgconfig(x11)
 BuildRequires: imake
 BuildRoot: %{_tmppath}/%{name}-buildroot
 
