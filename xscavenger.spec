@@ -1,6 +1,6 @@
 %define name xscavenger
 %define version 1.4.4
-%define release %mkrel 10
+%define release  11
 %define summary Cool arcade/thinking game very much like Lode Runner
 
 Name: %{name}
@@ -17,7 +17,6 @@ License: GPL
 Group: Games/Arcade
 BuildRequires: pkgconfig(x11)
 BuildRequires: imake
-BuildRoot: %{_tmppath}/%{name}-buildroot
 
 %description
 Scavenger is a cool arcade/thinking game very much like Lode Runner.
