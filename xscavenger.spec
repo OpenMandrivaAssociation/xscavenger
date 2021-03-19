@@ -18,6 +18,7 @@ Group: Games/Arcade
 
 BuildRequires: pkgconfig(alsa)
 BuildRequires: pkgconfig(x11)
+BuildRequires: pkgconfig(xext)
 BuildRequires: imake
 
 %description
