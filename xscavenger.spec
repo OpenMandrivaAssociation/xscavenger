@@ -1,6 +1,6 @@
 %define name xscavenger
-%define version 1.4.4
-%define release  12
+%define version 1.4.5
+%define release  1
 %define summary Cool arcade/thinking game very much like Lode Runner
 
 Name: %{name}
@@ -11,7 +11,7 @@ Source: http://www.xdr.com/dash/%{name}-%{version}.tar.bz2
 Source10: %{name}.16.png.bz2
 Source11: %{name}.32.png.bz2
 Source12: %{name}.48.png.bz2
-Patch0: xscavenger-1.4.4-link.patch
+#Patch0: xscavenger-1.4.4-link.patch
 URL: http://www.xdr.com/dash/scavenger.html
 License: GPL
 Group: Games/Arcade
@@ -27,7 +27,7 @@ to solve.
 
 %prep
 %setup -q
-%patch0 -p0
+#patch0 -p0
 
 %build
 cd src
@@ -119,10 +119,10 @@ rm -rf "$RPM_BUILD_ROOT"
 - import xscavenger
 
 
-* Sun Oct 02 2005 Nicolas Lécureuil <neoclust@mandriva.org> 1.4.4-5mdk
+* Sun Oct 02 2005 Nicolas LÃ©cureuil <neoclust@mandriva.org> 1.4.4-5mdk
 - BuildRequires fix
 
-* Thu Jun 02 2005 Nicolas Lécureuil <neoclust@mandriva.org> 1.4.4-4mdk
+* Thu Jun 02 2005 Nicolas LÃ©cureuil <neoclust@mandriva.org> 1.4.4-4mdk
 - Rebuild
 
 * Fri Feb 27 2004 Guillaume Cottenceau <gc@mandrakesoft.com> 1.4.4-3mdk
