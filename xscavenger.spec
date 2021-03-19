@@ -71,9 +71,9 @@ mkdir -p $RPM_BUILD_ROOT%{_liconsdir}
 %attr(0755,root,root) %{_gamesbindir}/*
 %{_gamesdatadir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
-%{_miconsdir}/%{name}.png
-%{_iconsdir}/%{name}.png
-%{_liconsdir}/%{name}.png
+#{_miconsdir}/%{name}.png
+#{_iconsdir}/%{name}.png
+#{_liconsdir}/%{name}.png
 %{_mandir}/*/*
 
 
