@@ -7,7 +7,7 @@ Name: %{name}
 Summary: %{summary}
 Version: %{version}
 Release: %{release}
-Source: http://www.xdr.com/dash/%{name}-%{version}.tar.bz2
+Source: http://www.xdr.com/dash/%{name}-%{version}.tgz
 Source10: %{name}.16.png.bz2
 Source11: %{name}.32.png.bz2
 Source12: %{name}.48.png.bz2
