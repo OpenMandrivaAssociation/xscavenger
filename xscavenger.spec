@@ -7,11 +7,9 @@ Name: %{name}
 Summary: %{summary}
 Version: %{version}
 Release: %{release}
-Source: http://www.xdr.com/dash/%{name}-%{version}.tgz
-Source10: %{name}.16.png.bz2
-Source11: %{name}.32.png.bz2
-Source12: %{name}.48.png.bz2
-#Patch0: xscavenger-1.4.4-link.patch
+Source0: http://www.xdr.com/dash/%{name}-%{version}.tgz
+Source1: xscavenger.48.png
+
 URL: http://www.xdr.com/dash/scavenger.html
 License: GPL
 Group: Games/Arcade
@@ -61,7 +59,7 @@ EOF
 mkdir -p $RPM_BUILD_ROOT%{_miconsdir}
 mkdir -p $RPM_BUILD_ROOT%{_liconsdir}
 #bzcat %{SOURCE10} > $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
-#bzcat %{SOURCE11} > $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
+%{SOURCE1} > $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
 #bzcat %{SOURCE12} > $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
 
 
@@ -72,7 +70,7 @@ mkdir -p $RPM_BUILD_ROOT%{_liconsdir}
 %{_gamesdatadir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
 #{_miconsdir}/%{name}.png
-#{_iconsdir}/%{name}.png
+%{_iconsdir}/%{name}.png
 #{_liconsdir}/%{name}.png
 %{_mandir}/*/*
 
