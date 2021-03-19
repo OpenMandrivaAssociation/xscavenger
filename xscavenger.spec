@@ -60,22 +60,10 @@ EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_miconsdir}
 mkdir -p $RPM_BUILD_ROOT%{_liconsdir}
-bzcat %{SOURCE10} > $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
-bzcat %{SOURCE11} > $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
-bzcat %{SOURCE12} > $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
+#bzcat %{SOURCE10} > $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
+#bzcat %{SOURCE11} > $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
+#bzcat %{SOURCE12} > $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
 
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%endif
-
-%clean
-rm -rf "$RPM_BUILD_ROOT"
 
 %files
 %defattr(-,root,root)
