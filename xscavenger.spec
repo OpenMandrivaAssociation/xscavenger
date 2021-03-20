@@ -1,16 +1,11 @@
-%define name xscavenger
-%define version 1.4.5
-%define release  1
-%define summary Cool arcade/thinking game very much like Lode Runner
-
-Name: %{name}
-Summary: %{summary}
-Version: %{version}
-Release: %{release}
-Source0: http://www.xdr.com/dash/%{name}-%{version}.tgz
+Name: xscavenger
+Summary: Cool arcade/thinking game very much like Lode Runner
+Version: 1.4.5
+Release: 1
+Source0: http://www.linuxmotors.com/linux/scavenger/downloads/xscavenger-%{version}.tgz
 Source1: xscavenger.48.png
 
-URL: http://www.xdr.com/dash/scavenger.html
+URL: http://www.linuxmotors.com/linux/scavenger/index.html
 License: GPL
 Group: Games/Arcade
 
@@ -28,7 +23,6 @@ to solve.
 
 %prep
 %setup -q
-#patch0 -p0
 
 %build
 cd src
@@ -56,12 +50,6 @@ Name=X-Scavenger
 Comment=%{summary}
 EOF
 
-mkdir -p $RPM_BUILD_ROOT%{_miconsdir}
-mkdir -p $RPM_BUILD_ROOT%{_liconsdir}
-#bzcat %{SOURCE10} > $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
-#{SOURCE1} > $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
-#bzcat %{SOURCE12} > $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
-
 install -D -m644 %{_sourcedir}/%{name}.48.png \
         %{buildroot}%{_iconsdir}/hicolor/128x128/apps/%{name}.png
 
@@ -72,11 +60,7 @@ install -D -m644 %{_sourcedir}/%{name}.48.png \
 %attr(0755,root,root) %{_gamesbindir}/*
 %{_gamesdatadir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
-#{_miconsdir}/%{name}.png
-%{_iconsdir}/%{name}.png
-#{_liconsdir}/%{name}.png
-%{_mandir}/*/*
-
+%{_iconsdir}/hicolor/128x128/apps/%{name}.png
 
 
 %changelog
