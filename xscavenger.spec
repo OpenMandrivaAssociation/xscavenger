@@ -59,8 +59,11 @@ EOF
 mkdir -p $RPM_BUILD_ROOT%{_miconsdir}
 mkdir -p $RPM_BUILD_ROOT%{_liconsdir}
 #bzcat %{SOURCE10} > $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
-%{SOURCE1} > $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
+#{SOURCE1} > $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
 #bzcat %{SOURCE12} > $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
+
+install -D -m644 %{_sourcedir}/%{name}.48.png \
+        %{buildroot}%{_iconsdir}/hicolor/128x128/apps/%{name}.png
 
 
 %files
