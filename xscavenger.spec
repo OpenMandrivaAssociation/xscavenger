@@ -1,21 +1,17 @@
-%define name xscavenger
-%define version 1.4.4
-%define release  12
-%define summary Cool arcade/thinking game very much like Lode Runner
+Name: xscavenger
+Summary: Cool arcade/thinking game very much like Lode Runner
+Version: 1.4.5
+Release: 1
+Source0: http://www.linuxmotors.com/linux/scavenger/downloads/xscavenger-%{version}.tgz
+Source1: xscavenger.48.png
 
-Name: %{name}
-Summary: %{summary}
-Version: %{version}
-Release: %{release}
-Source: http://www.xdr.com/dash/%{name}-%{version}.tar.bz2
-Source10: %{name}.16.png.bz2
-Source11: %{name}.32.png.bz2
-Source12: %{name}.48.png.bz2
-Patch0: xscavenger-1.4.4-link.patch
-URL: http://www.xdr.com/dash/scavenger.html
+URL: http://www.linuxmotors.com/linux/scavenger/index.html
 License: GPL
 Group: Games/Arcade
+
+BuildRequires: pkgconfig(alsa)
 BuildRequires: pkgconfig(x11)
+BuildRequires: pkgconfig(xext)
 BuildRequires: imake
 
 %description
@@ -27,7 +23,6 @@ to solve.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
 cd src
@@ -55,24 +50,9 @@ Name=X-Scavenger
 Comment=%{summary}
 EOF
 
-mkdir -p $RPM_BUILD_ROOT%{_miconsdir}
-mkdir -p $RPM_BUILD_ROOT%{_liconsdir}
-bzcat %{SOURCE10} > $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
-bzcat %{SOURCE11} > $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
-bzcat %{SOURCE12} > $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
+install -D -m644 %{_sourcedir}/%{name}.48.png \
+        %{buildroot}%{_iconsdir}/hicolor/128x128/apps/%{name}.png
 
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%endif
-
-%clean
-rm -rf "$RPM_BUILD_ROOT"
 
 %files
 %defattr(-,root,root)
@@ -80,11 +60,7 @@ rm -rf "$RPM_BUILD_ROOT"
 %attr(0755,root,root) %{_gamesbindir}/*
 %{_gamesdatadir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
-%{_miconsdir}/%{name}.png
-%{_iconsdir}/%{name}.png
-%{_liconsdir}/%{name}.png
-%{_mandir}/*/*
-
+%{_iconsdir}/hicolor/128x128/apps/%{name}.png
 
 
 %changelog
@@ -119,10 +95,10 @@ rm -rf "$RPM_BUILD_ROOT"
 - import xscavenger
 
 
-* Sun Oct 02 2005 Nicolas Lécureuil <neoclust@mandriva.org> 1.4.4-5mdk
+* Sun Oct 02 2005 Nicolas LÃ©cureuil <neoclust@mandriva.org> 1.4.4-5mdk
 - BuildRequires fix
 
-* Thu Jun 02 2005 Nicolas Lécureuil <neoclust@mandriva.org> 1.4.4-4mdk
+* Thu Jun 02 2005 Nicolas LÃ©cureuil <neoclust@mandriva.org> 1.4.4-4mdk
 - Rebuild
 
 * Fri Feb 27 2004 Guillaume Cottenceau <gc@mandrakesoft.com> 1.4.4-3mdk
