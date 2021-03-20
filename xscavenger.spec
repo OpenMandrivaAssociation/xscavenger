@@ -61,6 +61,7 @@ install -D -m644 %{_sourcedir}/%{name}.48.png \
 %{_gamesdatadir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %{_iconsdir}/hicolor/128x128/apps/%{name}.png
+%{_mandir}/man6/scavenger.6.*
 
 
 %changelog
