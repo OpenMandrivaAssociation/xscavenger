@@ -1,6 +1,6 @@
 Name: xscavenger
 Summary: Cool arcade/thinking game very much like Lode Runner
-Version: 1.4.5
+Version: 143
 Release: 1
 Source0: http://www.linuxmotors.com/linux/scavenger/downloads/xscavenger-%{version}.tgz
 Source1: xscavenger.48.png
