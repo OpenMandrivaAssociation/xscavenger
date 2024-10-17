@@ -5,7 +5,7 @@ Release: 1
 Source0: http://www.linuxmotors.com/linux/scavenger/downloads/xscavenger-%{version}.tgz
 Source1: xscavenger.48.png
 
-URL: http://www.linuxmotors.com/linux/scavenger/index.html
+URL: https://www.linuxmotors.com/linux/scavenger/index.html
 License: GPL
 Group: Games/Arcade
 
